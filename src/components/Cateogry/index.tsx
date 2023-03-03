@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Category: FC<Props> = (props) => {
-  const { list, ...divProps } = props; // 通过解构赋值，将 list 从 props 中剥离出来，剩下的部分赋值给 divProps, divProps 是一个对象，包含了除了 list 以外的所有属性
+  const { list, ...divProps } = props; //divProps 是一个对象，包含了除了 list 以外的所有属性
 
   return (
     <div {...divProps} className={styles.category}>
@@ -17,7 +17,6 @@ const Category: FC<Props> = (props) => {
         {list.map((videoData) => (
           <li key={videoData.id}>
             <video data-video-id={videoData.id} loop muted src={videoData.src}></video>
-            {/* data-video-id属性用于标记视频的id，方便后续通过id找到对应的video元素 */}
           </li>
         ))}
       </ul>
