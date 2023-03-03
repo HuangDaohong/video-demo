@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import NavBar from './components/NavBar';
 import Tabs from './components/Tabs';
 import BannerImage from './assets/banner.png';
 import FooterImage from './assets/footer.jpg';
 import Category from './components/Cateogry';
-import { cloneWith, debounce } from 'lodash';
+import { debounce } from 'lodash';
 
 import styles from './styles.module.scss';
 import { dataSource } from './constants/data';
@@ -91,6 +91,7 @@ const App = () => {
     videoEls.forEach((el) => el.pause());
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onScrollEnd = useCallback(
     // useCallback 用于缓存函数，避免每次渲染都重新生成函数
     debounce(() => {
@@ -183,7 +184,7 @@ const App = () => {
         <img className={styles.banner} src={FooterImage} alt="Banner" />
 
         <footer className={styles.footer}>
-          <span>@Bilibili 2022</span>
+          <span>@Bilibili 2023</span>
         </footer>
       </div>
     </div>
